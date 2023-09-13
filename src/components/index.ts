@@ -1,0 +1,9 @@
+export { default as Header } from './[Shared]/Header';
+export { default as Navbar } from './[Shared]/Navbar';
+export { default as Footer } from './[Shared]/Footer';
+export { default as Hero } from './[Sections]/Hero';
+export { default as Arkan } from './[Sections]/Arkan';
+export { default as Salat } from './[Sections]/Salat';
+export { default as Quran } from './[Sections]/Quran';
+export { default as Tasbeeh } from './[Sections]/Tasbeeh';
+export { default as Azkar } from './[Sections]/Azkar';
