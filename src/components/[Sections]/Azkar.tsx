@@ -28,16 +28,16 @@ const Azkar = ({ azkarRef }: Props) => {
           <div className="w-full flex items-center justify-center">
             <p
               className={`p-2 rounded-tr-md text-center w-1/2 cursor-pointer ${
-                isActive && 'bg-[#0e820e]'
-              } ${isDarkMode ? 'text-white' : 'text-slate-900'}`}
+                isActive ? 'bg-[#0e820e] text-white' : 'text-slate-900'
+              }`}
               onClick={() => setIsActive(true)}
             >
               أذكار الصباح
             </p>
             <p
               className={`p-2 rounded-tl-md text-center w-1/2 cursor-pointer ${
-                isActive === false && 'bg-[#0e820e]'
-              } ${isDarkMode ? 'text-white' : 'text-slate-900'}`}
+                !isActive ? 'bg-[#0e820e] text-white' : 'text-slate-900'
+              }`}
               onClick={() => setIsActive(false)}
             >
               أذكار المساء

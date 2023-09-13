@@ -2,10 +2,13 @@
 import { useContext, useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+
 import { HiOutlineBars3 } from 'react-icons/hi2';
 import { AiOutlineClose } from 'react-icons/ai';
 import { BsFillSunFill, BsFillMoonFill } from 'react-icons/bs';
 import { DarkModeContext } from '../(Providers)/darkMode';
+import ToggleLang from './ToggleLang';
+import { useTranslations } from 'next-intl';
 type Props = {
   pillarsRef: React.MutableRefObject<null>;
   prayerTimesRef: React.MutableRefObject<null>;
@@ -21,6 +24,7 @@ const Navbar = ({
   tasbeehRef,
   azkarRef,
 }: Props) => {
+  const t = useTranslations('Index');
   const { isDarkMode, setIsDarkMode } = useContext(DarkModeContext);
   const [isOpen, setIsOpen] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
@@ -72,46 +76,49 @@ const Navbar = ({
               height={20}
               className="w-auto h-auto"
             />
-            <span className="text-3xl font-normal">التقوي</span>
+            <span className="text-3xl font-normal">{t('taqwa')}</span>
           </div>
         </Link>
-        <div className="sm:flex items-center justify-center gap-6 hidden">
+        <div className="sm:flex items-center justify-between gap-6 hidden">
           <p
             className={`cursor-pointer  transition-colors duration-200 text-lg font-normal`}
             onClick={() => scrollToRef(pillarsRef)}
           >
-            اركان الأسلام
+            {t('arkan')}
           </p>
           <p
             className={`cursor-pointer transition-colors duration-200 text-lg font-normal`}
             onClick={() => scrollToRef(prayerTimesRef)}
           >
-            مواقيت الصلاة
+            {t('salat')}
           </p>
           <p
             className={`cursor-pointer transition-colors duration-200 text-lg font-normal`}
             onClick={() => scrollToRef(quranRef)}
           >
-            القرآن الكريم
+            {t('quran')}
           </p>
           <p
             className={`cursor-pointer transition-colors duration-200 text-lg font-normal`}
             onClick={() => scrollToRef(tasbeehRef)}
           >
-            التسبيح
+            {t('tasbeeh')}
           </p>
           <p
             className={`cursor-pointer transition-colors duration-200 text-lg font-normal`}
             onClick={() => scrollToRef(azkarRef)}
           >
-            الأذكار
+            {t('azkar')}
           </p>
+        </div>
+        <div className="flex items-center justify-center gap-4">
           <p
             className={`cursor-pointer transition-colors duration-200 text-lg font-normal`}
             onClick={() => setIsDarkMode(!isDarkMode)}
           >
             {isDarkMode ? <BsFillSunFill /> : <BsFillMoonFill />}
           </p>
+          <ToggleLang />
         </div>
         <div className="sm:hidden cursor-pointer" onClick={handleOpen}>
           <HiOutlineBars3 className="text-3xl" />
