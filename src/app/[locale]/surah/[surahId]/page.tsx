@@ -1,6 +1,5 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
-import { HiBars3 } from 'react-icons/hi2';
 import { IoReturnUpBack } from 'react-icons/io5';
 import Audio from './components/Audio';
 import { Footer } from '@/components';
@@ -65,17 +64,20 @@ const SurahPage = async ({
             return (
               <div
                 key={numberInSurah}
-                className={`flex items-center justify-between gap-x-4 py-16 w-full ${borderBottomClass}`}
+                className={`flex w-full flex-col md:flex-row md:items-center md:justify-between gap-4 py-12 ${borderBottomClass}`}
               >
-                <div className="flex max-w-2xl">
-                  <p className="text-2xl leading-loose">{text}</p>
-                </div>
+                <p className="text-2xl leading-loose">{text}</p>
                 <Audio ayah={ayah} />
               </div>
             );
           })}
         </div>
       </main>
+      <div className="fixed bottom-10 left-10 bg-gray-100 text-slate-900 p-2 rounded-full shadow-md">
+        <Link href="/">
+          <IoReturnUpBack className="text-2xl" />
+        </Link>
+      </div>
       <Footer />
     </div>
   );
