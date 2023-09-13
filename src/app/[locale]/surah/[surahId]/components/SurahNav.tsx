@@ -6,13 +6,16 @@ import { HiBars3 } from 'react-icons/hi2';
 import { IoReturnUpBack } from 'react-icons/io5';
 import { DarkModeContext } from '@/components/(Providers)/darkMode';
 import { BsFillMoonFill, BsFillSunFill } from 'react-icons/bs';
+import { usePathname } from 'next/navigation';
 
 type Props = {
   name: string;
+  englishNameTranslation: string;
   references: SurahsReference[];
 };
 
-const SurahNav = ({ name, references }: Props) => {
+const SurahNav = ({ name, references, englishNameTranslation }: Props) => {
+  const router = usePathname();
   const { isDarkMode, setIsDarkMode } = useContext(DarkModeContext);
   const [showNav, setShowNav] = useState(false);
 
@@ -24,7 +27,9 @@ const SurahNav = ({ name, references }: Props) => {
         }`}
       >
         <div className="flex items-center justify-between max-w-6xl mx-auto px-4 md:px-6">
-          <h2 className="text-xl">{name}</h2>
+          <h2 className="text-xl">
+            {router.includes('/en') ? englishNameTranslation : name}
+          </h2>
           <div className="flex items-center justify-center gap-6 text-lg">
             <p
               className={`cursor-pointer transition-colors duration-200 font-normal`}

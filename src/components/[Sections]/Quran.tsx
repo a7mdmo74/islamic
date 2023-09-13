@@ -1,6 +1,6 @@
 import { Quran } from '@/typing';
 import { useTranslations } from 'next-intl';
-import Link from 'next/link';
+import Link from 'next-intl/link';
 import { usePathname } from 'next/navigation';
 import React from 'react';
 

@@ -2,6 +2,7 @@
 import React, { useContext, useState } from 'react';
 import { BiSolidRightArrow, BiSolidLeftArrow } from 'react-icons/bi';
 import { DarkModeContext } from '../(Providers)/darkMode';
+import { useTranslations } from 'next-intl';
 type Props = {
   tasbeehRef: React.MutableRefObject<null>;
 };
@@ -40,6 +41,7 @@ const initialTasbeehState = [
 ];
 
 const Tasbeeh = ({ tasbeehRef }: Props) => {
+  const t = useTranslations('Index');
   const { isDarkMode } = useContext(DarkModeContext);
   const [tasbeeh, setTasbeeh] = useState(initialTasbeehState);
   const [currentItem, setCurrentItem] = useState(0);
@@ -67,10 +69,8 @@ const Tasbeeh = ({ tasbeehRef }: Props) => {
       ref={tasbeehRef}
       className="relative py-10 text-center max-w-6xl mx-auto"
     >
-      <p className="text-[#0e820e] my-2">التسبيح</p>
-      <p className="tracking-wider font-semibold text-lg">
-        أَلا بِذِكْرِ اللَّهِ تَطْمَئِنُّ الْقُلُوبُ
-      </p>
+      <p className="text-[#0e820e] my-2">{t('tasbeeh')}</p>
+      <p className="tracking-wider font-semibold text-lg">{t('zekr')}</p>
       <div className="flex items-center justify-center flex-col mt-12">
         <div
           className={`relative w-[500px] max-w-[90%] py-2 px-6 flex items-center justify-center rounded-md shadow-md transition-all duration-200 ${

@@ -45,14 +45,16 @@ const Audio = ({ ayah }: Props) => {
       <button
         name="btn"
         onClick={handlePlay}
-        className="bg-transparent border-none flex items-center outline-none cursor-pointer"
+        className="bg-transparent border-none flex items-center gap-2 outline-none cursor-pointer"
       >
-        {isPlaying ? (
-          <AiOutlinePause className="border-[3px] border-solid border-[#fff] rounded-full flex items-center justify-center p-1 w-10 h-10 bg-transparent text-sm ml-3 transition-all duration-300 shadow-box text-[#0e820e]" />
-        ) : (
-          <BsFillPlayFill className="border-[3px] border-solid border-[#fff] rounded-full flex items-center justify-center p-1 w-10 h-10 bg-transparent text-sm ml-3 transition-all duration-300 shadow-box text-[#0e820e]" />
-        )}
-        إستمع الاّن
+        <span>
+          {isPlaying ? (
+            <AiOutlinePause className="border-[3px] border-solid border-[#fff] rounded-full flex items-center justify-center p-1 w-10 h-10 bg-transparent text-sm ml-3 transition-all duration-300 shadow-box text-[#0e820e]" />
+          ) : (
+            <BsFillPlayFill className="border-[3px] border-solid border-[#fff] rounded-full flex items-center justify-center p-1 w-10 h-10 bg-transparent text-sm ml-3 transition-all duration-300 shadow-box text-[#0e820e]" />
+          )}
+        </span>
+        <span>إستمع الاّن</span>
       </button>
       <audio controls className="hidden" ref={audioRef}>
         <source src={ayah.audio} type="audio/mpeg" />

@@ -1,14 +1,14 @@
 'use client';
 import { useContext, useEffect, useState } from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
-
+import Link from 'next-intl/link';
 import { HiOutlineBars3 } from 'react-icons/hi2';
 import { AiOutlineClose } from 'react-icons/ai';
 import { BsFillSunFill, BsFillMoonFill } from 'react-icons/bs';
 import { DarkModeContext } from '../(Providers)/darkMode';
 import ToggleLang from './ToggleLang';
 import { useTranslations } from 'next-intl';
+
 type Props = {
   pillarsRef: React.MutableRefObject<null>;
   prayerTimesRef: React.MutableRefObject<null>;
