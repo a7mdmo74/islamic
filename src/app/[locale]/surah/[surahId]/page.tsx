@@ -58,19 +58,19 @@ const SurahPage = async ({
       <SurahNav name={name} references={references} />
       <main className="mt-16 px-4 md:px-6">
         <div className="max-w-6xl mx-auto flex flex-col items-start justify-center gap-x-10">
-          {ayahs.map((ayah) => {
+          {ayahs.map((ayah, index) => {
             const { numberInSurah, text } = ayah;
+            const isLastItem = index === ayahs.length - 1;
+            const borderBottomClass = isLastItem ? '' : 'border-b-2';
             return (
               <div
                 key={numberInSurah}
-                className="flex items-center justify-between gap-x-4 py-16 border-b-2 w-full"
+                className={`flex items-center justify-between gap-x-4 py-16 w-full ${borderBottomClass}`}
               >
-                <div className="flex items-center justify-center gap-x-3 max-w-2xl">
-                  <p className="text-2xl">{text}</p>
+                <div className="flex max-w-2xl">
+                  <p className="text-2xl leading-loose">{text}</p>
                 </div>
-                <div>
-                  <Audio ayah={ayah} />
-                </div>
+                <Audio ayah={ayah} />
               </div>
             );
           })}

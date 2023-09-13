@@ -31,11 +31,11 @@ const Audio = ({ ayah }: Props) => {
     if (audioRef.current) {
       audioRef.current.addEventListener('ended', handleAudioEnd);
     }
-
+    const myAudio = audioRef.current!;
     // Cleanup the event listener when the component unmounts
     return () => {
-      if (audioRef.current) {
-        audioRef.current.removeEventListener('ended', handleAudioEnd);
+      if (myAudio) {
+        myAudio.removeEventListener('ended', handleAudioEnd);
       }
     };
   }, []);
