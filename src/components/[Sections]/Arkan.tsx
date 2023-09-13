@@ -55,7 +55,7 @@ const Arkan = ({ pillarsRef }: Props) => {
         {arkan.map((item) => (
           <div
             key={item.id}
-            className="flex items-center flex-col justify-center w-[150px] bg-white p-5 transition-all my-2 rounded-md hover:shadow-md"
+            className="flex items-center flex-col justify-center w-[120px] md:w-[150px] bg-white p-5 transition-all my-2 rounded-md hover:shadow-md"
           >
             <Image
               width={50}
