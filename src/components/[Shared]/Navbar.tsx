@@ -176,6 +176,7 @@ const Navbar = ({
             >
               {isDarkMode ? <BsFillSunFill /> : <BsFillMoonFill />}
             </p>
+            <ToggleLang />
           </div>
         </div>
       </div>
