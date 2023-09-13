@@ -1,5 +1,5 @@
 'use client';
-import { createContext, useEffect, useState } from 'react';
+import { createContext, useState } from 'react';
 
 type DarkModeContextType = {
   isDarkMode: boolean;
@@ -13,16 +13,7 @@ export const DarkModeContext = createContext<DarkModeContextType>({
 
 const DarkModeProvider = ({ children }: { children: React.ReactNode }) => {
   // Load dark mode preference from local storage when the component initializes
-  const [isDarkMode, setIsDarkMode] = useState<boolean>(() => {
-    const storedValue = localStorage.getItem('isDarkMode');
-    return storedValue ? JSON.parse(storedValue) : false;
-  });
-
-  // Update local storage when the isDarkMode state changes
-  useEffect(() => {
-    localStorage.setItem('isDarkMode', JSON.stringify(isDarkMode));
-  }, [isDarkMode]);
-
+  const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
   return (
     <DarkModeContext.Provider value={{ isDarkMode, setIsDarkMode }}>
       {children}
