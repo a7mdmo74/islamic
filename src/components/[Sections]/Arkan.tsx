@@ -47,11 +47,11 @@ const Arkan = ({ pillarsRef }: Props) => {
     >
       <p className="text-[#0e820e] my-2">{t('arkan')}</p>
       <p className="tracking-wider font-semibold text-lg">{t('build')}</p>
-      <div className="flex flex-wrap justify-evenly p-10">
+      <div className="flex flex-wrap justify-evenly gap-6 mt-6">
         {arkan.map((item) => (
           <div
             key={item.id}
-            className="flex items-center flex-col justify-center w-[120px] md:w-[150px] bg-white p-5 transition-all my-2 rounded-md hover:shadow-md"
+            className="flex items-center flex-col justify-center w-[130px] md:w-[150px] bg-white p-5 transition-all my-2 rounded-md hover:shadow-md"
           >
             <Image
               width={50}

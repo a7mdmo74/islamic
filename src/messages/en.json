@@ -1,6 +1,6 @@
 {
   "Index": {
-    "title-1": "Welcome",
+    "title": "Welcome",
     "place": "in the ",
     "taqwa": "Al Taqwa",
     "islam": "Islamic Center",
@@ -19,6 +19,14 @@
     "hajj": "Hajj (Pilgrimage)",
     "salat-today": "Today's Prayer Times",
     "messenger": "Messenger of Allah said:",
-    "hadis": "The first thing for which a person will be held accountable on the Day of Judgment is their prayer. If it is sound, the rest of their deeds will be sound; but if it is corrupt, the rest of their deeds will be corrupt."
+    "hadis": "The first thing for which a person will be held accountable on the Day of Judgment is their prayer. If it is sound, the rest of their deeds will be sound; but if it is corrupt, the rest of their deeds will be corrupt.",
+    "time": "Time",
+    "fajr": "Fajr",
+    "dhuhr": "Dhuhr",
+    "asr": "Asr",
+    "maghrib": "Maghrib",
+    "isha": "Isha",
+    "cairoTime": "According to Cairo local time",
+    "allah": "the remembrance of God is greater"
   }
 }

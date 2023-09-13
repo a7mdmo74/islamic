@@ -42,7 +42,7 @@ const Hero = () => {
         </div>
         <div className="relative mt-10 mb-5">
           <h1 className="leading-8 text-xl sm:text-3xl font-semibold">
-            {t('title-1')} <br />
+            {t('title')} <br />
             {t('place')}{' '}
             <span>
               {t('taqwa')} {'  '}

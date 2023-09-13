@@ -1,6 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 import { Salat } from '@/typing';
 import { useTranslations } from 'next-intl';
+import { usePathname } from 'next/navigation';
 import React from 'react';
 
 type Props = {
@@ -9,12 +10,16 @@ type Props = {
 };
 
 const Salat = ({ salatTime, prayerTimesRef }: Props) => {
+  const router = usePathname();
+
   const t = useTranslations('Index');
   const {
     data: {
+      timings,
       date: { hijri },
     },
   } = salatTime;
+
   return (
     <section ref={prayerTimesRef} className="relative py-10 text-center">
       <p className="text-[#0e820e] my-2">{t('salat')}</p>
@@ -25,7 +30,7 @@ const Salat = ({ salatTime, prayerTimesRef }: Props) => {
             "يا أيها الذين آمنوا استعينوا بالصبر والصلاة إن الله مع الصابرين"
           </p>
           <p className="flex items-center mt-2">
-            {t('messenger')}{' '}
+            {t('messenger')}
             <span className="text-[#0e820e] text-2xl mx-2"> ﷺ </span>
             <b>:</b>
           </p>
@@ -35,31 +40,49 @@ const Salat = ({ salatTime, prayerTimesRef }: Props) => {
             </span>
           </p>
           <p className="mt-10 text-[#0e820e]">
-            {hijri.weekday.ar} : {hijri.month.number} {hijri.month.ar}{' '}
-            {hijri.year}
+            {router === '/en'
+              ? hijri.weekday.en +
+                ' : ' +
+                hijri.month.en +
+                ' ' +
+                hijri.day +
+                ' ' +
+                hijri.year
+              : hijri.weekday.ar +
+                ' : ' +
+                hijri.month.ar +
+                ' ' +
+                hijri.day +
+                ' ' +
+                hijri.year}
           </p>
         </div>
         <div className="w-[350px] max-w-[350px]">
           <div className="py-5 flex items-center justify-around bg-[#0e820e] text-white font-semibold">
-            <p>الصلاة</p>
-            <p>الوقت</p>
+            <p>{t('salat')}</p>
+            <p>{t('time')}</p>
           </div>
           <div className="py-3 flex items-center justify-around">
-            <span>الفجر</span> <span className="salat-time">05:09</span>
+            <span>{t('fajr')}</span>
+            <span className="salat-time">{timings.Fajr}</span>
           </div>
           <div className="py-3 flex items-center justify-around">
-            <span>الظهر</span> <span className="salat-time">12:51</span>
+            <span>{t('dhuhr')}</span>
+            <span className="salat-time">{timings.Dhuhr}</span>
           </div>
           <div className="py-3 flex items-center justify-around">
-            <span>العصر</span> <span className="salat-time">16:23</span>
+            <span>{t('asr')}</span>
+            <span className="salat-time">{timings.Asr}</span>
           </div>
           <div className="py-3 flex items-center justify-around">
-            <span>المغرب</span> <span className="salat-time">19:06</span>
+            <span>{t('maghrib')}</span>
+            <span className="salat-time">{timings.Maghrib}</span>
           </div>
           <div className="py-3 flex items-center justify-around">
-            <span>العشاء</span> <span className="salat-time">20:36</span>
+            <span>{t('isha')}</span>
+            <span className="salat-time">{timings.Isha}</span>
           </div>
-          <p className="mt-5    ">حسب التوقيت المحلي لمدينة القاهرة</p>
+          <p className="mt-5">{t('cairoTime')}</p>
         </div>
       </div>
     </section>

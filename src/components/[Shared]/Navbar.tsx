@@ -76,42 +76,42 @@ const Navbar = ({
               height={20}
               className="w-auto h-auto"
             />
-            <span className="text-3xl font-normal">{t('taqwa')}</span>
+            <span className="text-xl font-normal">{t('taqwa')}</span>
           </div>
         </Link>
         <div className="sm:flex items-center justify-between gap-6 hidden">
           <p
-            className={`cursor-pointer  transition-colors duration-200 text-lg font-normal`}
+            className={`cursor-pointer  transition-colors duration-200 text-base font-normal`}
             onClick={() => scrollToRef(pillarsRef)}
           >
             {t('arkan')}
           </p>
           <p
-            className={`cursor-pointer transition-colors duration-200 text-lg font-normal`}
+            className={`cursor-pointer transition-colors duration-200 text-base font-normal`}
             onClick={() => scrollToRef(prayerTimesRef)}
           >
             {t('salat-time')}
           </p>
           <p
-            className={`cursor-pointer transition-colors duration-200 text-lg font-normal`}
+            className={`cursor-pointer transition-colors duration-200 text-base font-normal`}
             onClick={() => scrollToRef(quranRef)}
           >
             {t('quran')}
           </p>
           <p
-            className={`cursor-pointer transition-colors duration-200 text-lg font-normal`}
+            className={`cursor-pointer transition-colors duration-200 text-base font-normal`}
             onClick={() => scrollToRef(tasbeehRef)}
           >
             {t('tasbeeh')}
           </p>
           <p
-            className={`cursor-pointer transition-colors duration-200 text-lg font-normal`}
+            className={`cursor-pointer transition-colors duration-200 text-base font-normal`}
             onClick={() => scrollToRef(azkarRef)}
           >
             {t('azkar')}
           </p>
         </div>
-        <div className="flex items-center justify-center gap-4">
+        <div className="hidden sm:flex items-center justify-center gap-4">
           <p
             className={`cursor-pointer transition-colors duration-200 text-lg font-normal`}
             onClick={() => setIsDarkMode(!isDarkMode)}
