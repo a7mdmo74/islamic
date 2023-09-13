@@ -73,7 +73,7 @@ const SurahPage = async ({
           })}
         </div>
       </main>
-      <div className="fixed bottom-10 left-10 bg-gray-100 text-slate-900 p-2 rounded-full shadow-md">
+      <div className="fixed bottom-24 left-10 bg-gray-100 text-slate-900 p-2 rounded-full shadow-md">
         <Link href="/">
           <IoReturnUpBack className="text-2xl" />
         </Link>
