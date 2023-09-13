@@ -90,7 +90,7 @@ const Navbar = ({
             className={`cursor-pointer transition-colors duration-200 text-lg font-normal`}
             onClick={() => scrollToRef(prayerTimesRef)}
           >
-            {t('salat')}
+            {t('salat-time')}
           </p>
           <p
             className={`cursor-pointer transition-colors duration-200 text-lg font-normal`}

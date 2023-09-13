@@ -7,9 +7,18 @@
     "start": "Let's Start",
     "play": "Play",
     "arkan": "Pillars of Islam",
-    "salat": "Prayer Times",
+    "salat-time": "Prayer Times",
     "quran": "The Holy Quran",
     "tasbeeh": "Tasbeeh",
-    "azkar": "Azkar"
+    "azkar": "Remembrances",
+    "build": "Islam is built upon five",
+    "shahada": "The Two Testimonies",
+    "salat": "Prayer",
+    "zakat": "Zakat (Charity)",
+    "sawm": "Fasting",
+    "hajj": "Hajj (Pilgrimage)",
+    "salat-today": "Today's Prayer Times",
+    "messenger": "Messenger of Allah said:",
+    "hadis": "The first thing for which a person will be held accountable on the Day of Judgment is their prayer. If it is sound, the rest of their deeds will be sound; but if it is corrupt, the rest of their deeds will be corrupt."
   }
 }

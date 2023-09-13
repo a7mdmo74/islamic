@@ -1,5 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import { Salat } from '@/typing';
+import { useTranslations } from 'next-intl';
 import React from 'react';
 
 type Props = {
@@ -8,6 +9,7 @@ type Props = {
 };
 
 const Salat = ({ salatTime, prayerTimesRef }: Props) => {
+  const t = useTranslations('Index');
   const {
     data: {
       date: { hijri },
@@ -15,23 +17,22 @@ const Salat = ({ salatTime, prayerTimesRef }: Props) => {
   } = salatTime;
   return (
     <section ref={prayerTimesRef} className="relative py-10 text-center">
-      <p className="text-[#0e820e] my-2">الصلاة</p>
-      <p className="tracking-wider font-semibold text-lg">
-        مواقيت الصلاة اليوم
-      </p>
+      <p className="text-[#0e820e] my-2">{t('salat')}</p>
+      <p className="tracking-wider font-semibold text-lg">{t('salat-today')}</p>
       <div className="flex justify-evenly items-center flex-wrap mt-10 gap-12">
-        <div className="text-right flex flex-col space-y-4">
+        <div className="flex flex-col space-y-4">
           <p className="text-[#0e820e] text-lg">
             "يا أيها الذين آمنوا استعينوا بالصبر والصلاة إن الله مع الصابرين"
           </p>
           <p className="flex items-center mt-2">
-            قال رسول الله{' '}
+            {t('messenger')}{' '}
             <span className="text-[#0e820e] text-2xl mx-2"> ﷺ </span>
             <b>:</b>
           </p>
-          <p>
-            <span>{'{'} أول ما يحاسب به العبد يوم القيامة الصلاة،</span>
-            <span>فإن صلحت صلح سائر عمله، وإن فسدت فسد سائر عمله {'}'}</span>
+          <p className="max-w-2xl">
+            <span>
+              {'{'} {t('hadis')} {'}'}
+            </span>
           </p>
           <p className="mt-10 text-[#0e820e]">
             {hijri.weekday.ar} : {hijri.month.number} {hijri.month.ar}{' '}

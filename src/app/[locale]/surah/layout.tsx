@@ -8,7 +8,7 @@ const SurahLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <div
       className={`${
-        isDarkMode ? 'bg-slate-900 text-white' : 'bg-white text-slate-900'
+        isDarkMode ? 'bg-slate-800 text-white' : 'bg-white text-slate-900'
       }`}
     >
       {children}

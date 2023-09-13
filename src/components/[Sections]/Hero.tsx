@@ -3,7 +3,6 @@ import { useContext, useRef, useState } from 'react';
 import Image from 'next/image';
 import { BsFillPlayFill } from 'react-icons/bs';
 import { AiOutlinePause } from 'react-icons/ai';
-import { DarkModeContext } from '../(Providers)/darkMode';
 import { useTranslations } from 'next-intl';
 
 const Hero = () => {
