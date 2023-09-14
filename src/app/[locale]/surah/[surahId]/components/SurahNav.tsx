@@ -50,7 +50,7 @@ const SurahNav = ({ name, references, englishNameTranslation }: Props) => {
         className={`fixed top-0 z-50 min-h-screen w-full sm:w-[90%] md:w-[400px] max-h-[80vh] shadow-md ${
           showNav ? 'left-0' : '-left-full'
         } transition-all duration-300 z-50 overflow-y-scroll ${
-          !isDarkMode ? 'bg-slate-900 text-white' : 'bg-white text-slate-900'
+          isDarkMode ? 'bg-slate-900 text-white' : 'bg-white text-slate-900'
         }`}
       >
         <div className="w-full fixed top-0 z-50">
