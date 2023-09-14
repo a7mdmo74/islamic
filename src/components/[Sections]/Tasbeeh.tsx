@@ -81,7 +81,7 @@ const Tasbeeh = ({ tasbeehRef }: Props) => {
           <div className="p-5 overflow-hidden text-center flex flex-col items-center justify-center">
             <button
               name="btn"
-              className="w-[100px] border-none h-[100px] cursor-pointer text-4xl text-center mb-5 text-white bg-[#0e820e] rounded-full shadow-md transition-all duration-200 outline-none focus:outline-none focus:ring focus:ring-[#0b6e0b] flex items-center justify-center"
+              className="w-[80px] border-none h-[80px] cursor-pointer text-2xl md:text-4xl text-center mb-5 text-white bg-[#0e820e] rounded-full shadow-md transition-all duration-200 outline-none focus:outline-none focus:ring focus:ring-[#0b6e0b] flex items-center justify-center"
               onClick={incrementCount}
             >
               {currentItemData.count}
@@ -91,38 +91,38 @@ const Tasbeeh = ({ tasbeehRef }: Props) => {
             </p>
           </div>
           <div className="absolute w-full mt-4 flex justify-between px-4">
-            {router === '/' ? (
+            {router === '/en' ? (
               <>
-                <button
-                  name="btn"
-                  onClick={prevItem}
-                  className="px-4 py-2 bg-[#0e820e] text-white rounded-lg hover:bg-[#0b6e0b] focus:outline-none focus:ring focus:ring-[#0b6e0b]"
-                >
-                  <BiSolidRightArrow />
-                </button>
                 <button
                   name="btn"
                   onClick={nextItem}
                   className="px-4 py-2 bg-[#0e820e] text-white rounded-lg hover:bg-[#0b6e0b] focus:outline-none focus:ring focus:ring-[#0b6e0b]"
                 >
                   <BiSolidLeftArrow />
+                </button>
+                <button
+                  name="btn"
+                  onClick={prevItem}
+                  className="px-4 py-2 bg-[#0e820e] text-white rounded-lg hover:bg-[#0b6e0b] focus:outline-none focus:ring focus:ring-[#0b6e0b]"
+                >
+                  <BiSolidRightArrow />
                 </button>
               </>
             ) : (
               <>
                 <button
                   name="btn"
-                  onClick={nextItem}
-                  className="px-4 py-2 bg-[#0e820e] text-white rounded-lg hover:bg-[#0b6e0b] focus:outline-none focus:ring focus:ring-[#0b6e0b]"
-                >
-                  <BiSolidLeftArrow />
-                </button>
-                <button
-                  name="btn"
                   onClick={prevItem}
                   className="px-4 py-2 bg-[#0e820e] text-white rounded-lg hover:bg-[#0b6e0b] focus:outline-none focus:ring focus:ring-[#0b6e0b]"
                 >
                   <BiSolidRightArrow />
+                </button>
+                <button
+                  name="btn"
+                  onClick={nextItem}
+                  className="px-4 py-2 bg-[#0e820e] text-white rounded-lg hover:bg-[#0b6e0b] focus:outline-none focus:ring focus:ring-[#0b6e0b]"
+                >
+                  <BiSolidLeftArrow />
                 </button>
               </>
             )}
