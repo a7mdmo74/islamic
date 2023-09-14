@@ -42,7 +42,7 @@ const Container = ({
                     className={`flex w-full flex-col md:flex-row md:items-center md:justify-between gap-4 py-12 ${borderBottomClass}`}
                   >
                     <p className="text-2xl leading-loose max-w-3xl">{text}</p>
-                    {/* <Audio ayah={ayah} /> */}
+                    <Audio ayah={ayah} />
                   </div>
                 );
               })
