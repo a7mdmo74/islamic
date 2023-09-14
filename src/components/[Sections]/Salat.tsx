@@ -26,9 +26,7 @@ const Salat = ({ salatTime, prayerTimesRef }: Props) => {
       <p className="tracking-wider font-semibold text-lg">{t('salat-today')}</p>
       <div className="flex justify-evenly items-center flex-wrap mt-10 gap-12">
         <div className="flex flex-col space-y-4">
-          <p className="text-[#0e820e] text-lg">
-            "يا أيها الذين آمنوا استعينوا بالصبر والصلاة إن الله مع الصابرين"
-          </p>
+          <p className="text-[#0e820e] text-lg">"{t('salat-header')}"</p>
           <p className="flex items-center mt-2">
             {t('messenger')}
             <span className="text-[#0e820e] text-2xl mx-2"> ﷺ </span>
