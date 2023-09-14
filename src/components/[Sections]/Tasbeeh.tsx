@@ -3,46 +3,47 @@ import React, { useContext, useState } from 'react';
 import { BiSolidRightArrow, BiSolidLeftArrow } from 'react-icons/bi';
 import { DarkModeContext } from '../(Providers)/darkMode';
 import { useTranslations } from 'next-intl';
+import { usePathname } from 'next/navigation';
 type Props = {
   tasbeehRef: React.MutableRefObject<null>;
 };
 
-const initialTasbeehState = [
-  {
-    id: 1,
-    name: 'سبحان الله',
-    count: 0,
-  },
-  {
-    id: 2,
-    name: 'الحمد لله',
-    count: 0,
-  },
-  {
-    id: 3,
-    name: 'الله أكبر',
-    count: 0,
-  },
-  {
-    id: 4,
-    name: 'لا إله إلا الله',
-    count: 0,
-  },
-  {
-    id: 5,
-    name: 'سبحان الله وبحمده',
-    count: 0,
-  },
-  {
-    id: 6,
-    name: 'سبحان الله العظيم',
-    count: 0,
-  },
-];
-
 const Tasbeeh = ({ tasbeehRef }: Props) => {
   const t = useTranslations('Index');
+  const router = usePathname();
   const { isDarkMode } = useContext(DarkModeContext);
+  const initialTasbeehState = [
+    {
+      id: 1,
+      name: t('subhanallah'),
+      count: 0,
+    },
+    {
+      id: 2,
+      name: t('alhamdulillah'),
+      count: 0,
+    },
+    {
+      id: 3,
+      name: t('allahuakbar'),
+      count: 0,
+    },
+    {
+      id: 4,
+      name: t('la'),
+      count: 0,
+    },
+    {
+      id: 5,
+      name: t('wa'),
+      count: 0,
+    },
+    {
+      id: 6,
+      name: t('we'),
+      count: 0,
+    },
+  ];
   const [tasbeeh, setTasbeeh] = useState(initialTasbeehState);
   const [currentItem, setCurrentItem] = useState(0);
 
@@ -90,20 +91,41 @@ const Tasbeeh = ({ tasbeehRef }: Props) => {
             </p>
           </div>
           <div className="absolute w-full mt-4 flex justify-between px-4">
-            <button
-              name="btn"
-              onClick={prevItem}
-              className="px-4 py-2 bg-[#0e820e] text-white rounded-lg hover:bg-[#0b6e0b] focus:outline-none focus:ring focus:ring-[#0b6e0b]"
-            >
-              <BiSolidRightArrow />
-            </button>
-            <button
-              name="btn"
-              onClick={nextItem}
-              className="px-4 py-2 bg-[#0e820e] text-white rounded-lg hover:bg-[#0b6e0b] focus:outline-none focus:ring focus:ring-[#0b6e0b]"
-            >
-              <BiSolidLeftArrow />
-            </button>
+            {router === '/' ? (
+              <>
+                <button
+                  name="btn"
+                  onClick={prevItem}
+                  className="px-4 py-2 bg-[#0e820e] text-white rounded-lg hover:bg-[#0b6e0b] focus:outline-none focus:ring focus:ring-[#0b6e0b]"
+                >
+                  <BiSolidRightArrow />
+                </button>
+                <button
+                  name="btn"
+                  onClick={nextItem}
+                  className="px-4 py-2 bg-[#0e820e] text-white rounded-lg hover:bg-[#0b6e0b] focus:outline-none focus:ring focus:ring-[#0b6e0b]"
+                >
+                  <BiSolidLeftArrow />
+                </button>
+              </>
+            ) : (
+              <>
+                <button
+                  name="btn"
+                  onClick={nextItem}
+                  className="px-4 py-2 bg-[#0e820e] text-white rounded-lg hover:bg-[#0b6e0b] focus:outline-none focus:ring focus:ring-[#0b6e0b]"
+                >
+                  <BiSolidLeftArrow />
+                </button>
+                <button
+                  name="btn"
+                  onClick={prevItem}
+                  className="px-4 py-2 bg-[#0e820e] text-white rounded-lg hover:bg-[#0b6e0b] focus:outline-none focus:ring focus:ring-[#0b6e0b]"
+                >
+                  <BiSolidRightArrow />
+                </button>
+              </>
+            )}
           </div>
         </div>
       </div>

@@ -133,7 +133,7 @@ const Navbar = ({
           <div className="flex items-center justify-between px-2 py-5">
             <div className="flex items-center justify-center gap-6">
               <Image src="/images/logo.png" alt="logo" width={50} height={50} />
-              <span className="text-3xl font-normal">التقوي</span>
+              <span className="text-3xl font-normal">{t('taqwa')}</span>
             </div>
             <div className="sm:hidden cursor-pointer" onClick={handleOpen}>
               <AiOutlineClose className="text-3xl" />
@@ -144,31 +144,31 @@ const Navbar = ({
               className="cursor-pointer transition-colors duration-200 text-lg font-normal"
               onClick={() => scrollToRef(pillarsRef)}
             >
-              اركان الأسلام
+              {t('arkan')}
             </p>
             <p
               className="cursor-pointer transition-colors duration-200 text-lg font-normal"
               onClick={() => scrollToRef(prayerTimesRef)}
             >
-              مواقيت الصلاة
+              {t('salat-time')}
             </p>
             <p
               className="cursor-pointer transition-colors duration-200 text-lg font-normal"
               onClick={() => scrollToRef(quranRef)}
             >
-              القرآن الكريم
+              {t('quran')}
             </p>
             <p
               className="cursor-pointer transition-colors duration-200 text-lg font-normal"
               onClick={() => scrollToRef(tasbeehRef)}
             >
-              التسبيح
+              {t('tasbeeh')}
             </p>
             <p
               className="cursor-pointer transition-colors duration-200 text-lg font-normal"
               onClick={() => scrollToRef(azkarRef)}
             >
-              الأذكار
+              {t('azkar')}
             </p>
             <p
               className="cursor-pointer transition-colors duration-200 text-lg font-normal"

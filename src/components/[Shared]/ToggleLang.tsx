@@ -4,11 +4,17 @@ import Link from 'next-intl/link';
 const ToggleLang = () => {
   return (
     <p
-      className={`cursor-pointer transition-colors duration-200 text-lg font-normal flex flex-col md:flex-row gap-2 items-center justify-center md:justify-start`}
+      className={`transition-colors duration-200 flex flex-col md:flex-row gap-2 items-center justify-center md:justify-start`}
     >
-      <Link href="/en">English</Link>
+      <Link href="/en" className="cursor-pointer text-lg font-semibold">
+        English
+      </Link>
       <span>|</span>
-      <Link href="/ar" locale="ar">
+      <Link
+        href="/ar"
+        className="cursor-pointer text-lg font-semibold"
+        locale="ar"
+      >
         عربي
       </Link>
     </p>
