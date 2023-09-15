@@ -1,6 +1,4 @@
 import { Metadata } from 'next';
-import Link from 'next-intl/link';
-import { IoReturnUpBack } from 'react-icons/io5';
 import { Footer } from '@/components';
 import { Surah } from '@/typing';
 import Container from './components/Container';
@@ -76,11 +74,7 @@ const SurahPage = async ({
         englishNameTranslation={englishNameTranslation}
         ayahsEn={ayahsEn}
       />
-      <div className="fixed bottom-24 left-10 bg-gray-100 text-slate-900 p-2 rounded-full shadow-md">
-        <Link href="/">
-          <IoReturnUpBack className="text-2xl" />
-        </Link>
-      </div>
+
       <Footer />
     </div>
   );

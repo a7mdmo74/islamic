@@ -1,5 +1,7 @@
 'use client';
 import React from 'react';
+import Link from 'next-intl/link';
+import { IoReturnUpBack } from 'react-icons/io5';
 import SurahNav from './SurahNav';
 import { Ayah, SurahsReference } from '@/typing';
 import Audio from './Audio';
@@ -62,6 +64,15 @@ const Container = ({
               })}
         </div>
       </main>
+      <div
+        className={`fixed bottom-24 bg-gray-100 text-slate-900 p-2 rounded-full shadow-md ${
+          router.includes('/en') ? 'right-10' : 'left-10'
+        }`}
+      >
+        <Link href="/">
+          <IoReturnUpBack className="text-2xl" />
+        </Link>
+      </div>
     </div>
   );
 };
