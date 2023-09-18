@@ -1,5 +1,6 @@
 'use client';
 import { Ayah } from '@/typing';
+import { useTranslations } from 'next-intl';
 import { useEffect, useRef, useState } from 'react';
 import { AiOutlinePause } from 'react-icons/ai';
 import { BsFillPlayFill } from 'react-icons/bs';
@@ -9,6 +10,7 @@ type Props = {
 };
 
 const Audio = ({ ayah }: Props) => {
+  const t = useTranslations('Index');
   const audioRef = useRef<HTMLAudioElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
 
@@ -54,7 +56,7 @@ const Audio = ({ ayah }: Props) => {
             <BsFillPlayFill className="border-[3px] border-solid border-[#fff] rounded-full flex items-center justify-center p-1 w-10 h-10 bg-transparent text-sm ml-3 transition-all duration-300 shadow-box text-[#0e820e]" />
           )}
         </span>
-        <span>إستمع الاّن</span>
+        <span>{t('listen')}</span>
       </button>
       <audio controls className="hidden" ref={audioRef}>
         <source src={ayah.audio} type="audio/mpeg" />

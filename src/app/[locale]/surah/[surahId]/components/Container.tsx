@@ -36,6 +36,7 @@ const Container = ({
           {router.includes('/en')
             ? ayahsEn.map((ayah, index) => {
                 const { numberInSurah, text } = ayah;
+
                 const isLastItem = index === ayahs.length - 1;
                 const borderBottomClass = isLastItem ? '' : 'border-b-2';
                 return (
@@ -44,7 +45,7 @@ const Container = ({
                     className={`flex w-full flex-col md:flex-row md:items-center md:justify-between gap-4 py-12 ${borderBottomClass}`}
                   >
                     <p className="text-2xl leading-loose max-w-3xl">{text}</p>
-                    <Audio ayah={ayah} />
+                    {/* <Audio ayah={ayah} /> */}
                   </div>
                 );
               })
