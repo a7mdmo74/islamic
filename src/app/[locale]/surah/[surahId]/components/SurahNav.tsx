@@ -1,7 +1,7 @@
 'use client';
 import { useContext, useState } from 'react';
 import { SurahsReference } from '@/typing';
-import Link from 'next/link';
+import Link from 'next-intl/link';
 import { HiBars3 } from 'react-icons/hi2';
 import { IoReturnUpBack } from 'react-icons/io5';
 import { DarkModeContext } from '@/components/(Providers)/darkMode';
@@ -48,12 +48,20 @@ const SurahNav = ({ name, references, englishNameTranslation }: Props) => {
       </nav>
       <div
         className={`fixed top-0 z-50 min-h-screen w-full sm:w-[90%] md:w-[400px] max-h-[80vh] shadow-md ${
-          showNav ? 'left-0' : '-left-full'
+          showNav
+            ? router.includes('/en')
+              ? 'right-0'
+              : 'left-0'
+            : '-right-full'
         } transition-all duration-300 z-50 overflow-y-scroll ${
-          isDarkMode ? 'bg-slate-900 text-white' : 'bg-white text-slate-900'
+          isDarkMode ? 'bg-slate-800 text-white' : 'bg-white text-slate-900'
         }`}
       >
-        <div className="w-full fixed top-0 z-50">
+        <div
+          className={`w-full fixed top-0 z-50 shadow-sm p-1.5 ${
+            isDarkMode ? 'bg-slate-900' : 'bg-white'
+          }`}
+        >
           <button
             name="btn"
             onClick={() => setShowNav(false)}
@@ -62,7 +70,7 @@ const SurahNav = ({ name, references, englishNameTranslation }: Props) => {
             <IoReturnUpBack />
           </button>
         </div>
-        <div className="mt-12">
+        <div className="mt-16">
           {references.map((surah: any) => {
             const { number, name, englishName } = surah;
             return (
