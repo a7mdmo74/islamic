@@ -25,7 +25,7 @@ Check out the live preview of the website: [Islamic Website Live Preview](https:
 1. Clone the repository:
 
    ```
-   git clone https://github.com/yourusername/islamic-website.git
+   git clone https://github.com/a7mdmo74/islamic.git
    ```
 
 2. Navigate to the project directory:
